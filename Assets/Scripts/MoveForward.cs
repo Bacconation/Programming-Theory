@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
-    [SerializeField] float movementSpeed;
+    private float movementSpeed = 15;
 
-    private void Update()
-    {
-        ApplyMovement();
-    }
+    public float MovementSpeed { get => movementSpeed; set => movementSpeed = value; }
 
     private void ApplyMovement()
     {

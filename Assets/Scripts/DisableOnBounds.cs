@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOnBounds : MonoBehaviour
+public class DisableOnBounds : MonoBehaviour
 {
-    [SerializeField] float xBoundsmin, xBoundsMax;
+    [SerializeField] float xBoundsmin = -120, xBoundsMax = 90;
 
     private void Update()
     {
         if (transform.position.x < xBoundsmin || transform.position.x > xBoundsMax)
-            DestroyVehicle();
+            DisableVehicle();
     }
 
-    private void DestroyVehicle()
+    private void DisableVehicle()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
