@@ -11,7 +11,7 @@ public class VehicleTank : Vehicle
         SetVehicleColor();
     }
 
-    public override void MoveVehicle()
+    public override void MoveVehicle() // POLYMORPHISM
     {
         if(transform.parent.name == "East Spawn Position")
             transform.Translate(movementSpeed * Time.deltaTime * -Vector3.right, Space.World);

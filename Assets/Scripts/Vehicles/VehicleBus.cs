@@ -14,14 +14,14 @@ public class VehicleBus : Vehicle
         baseXScale = transform.localScale.x;
     }
 
-    public override void MoveVehicle()
+    public override void MoveVehicle() // POLYMORPHISM
     {
         base.MoveVehicle();
 
         ChangeVehicleScale();
     }
 
-    private void ChangeVehicleScale()
+    private void ChangeVehicleScale() // ABSTRACTION
     {
         if (transform.localScale.x >= baseXScale + scaleChange)
         {

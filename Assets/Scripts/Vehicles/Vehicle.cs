@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class Vehicle : MonoBehaviour
 {
-    //base class for all vehicle types
-    //controls movement, coloring, scale
+    // INHERITANCE
 
     [SerializeField] protected float movementSpeed = 15;
     [SerializeField] protected List<Color32> baseColors = new();
@@ -29,7 +28,7 @@ public class Vehicle : MonoBehaviour
         MoveVehicle();
     }
 
-    public virtual void MoveVehicle()
+    public virtual void MoveVehicle() // POLYMORPHISM & ABSTRACTION
     {
         transform.Translate(Vector3.forward * movementSpeed * Time.deltaTime);
     }

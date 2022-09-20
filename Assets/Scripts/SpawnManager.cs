@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    private int FindInactiveVehicle()
+    private int FindInactiveVehicle() // ABSTRACTION
     {
         int vehicleIndex = 0;
 
@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour
         return vehicleIndex;
     }
 
-    private void ChooseRandomTransform()
+    private void ChooseRandomTransform() // ABSTRACTION
     {
         int randomTransform = Random.Range(0, 2);
         Transform targetTransform = null;
@@ -80,7 +80,7 @@ public class SpawnManager : MonoBehaviour
         activeSpawnTransform = targetTransform;
     }
 
-    private void SetVehicleRotation()
+    private void SetVehicleRotation() // ABSTRACTION
     {
         if (activeSpawnTransform == eastSpawnTransform)
             activeVehicles[currentVehicleIndex].transform.eulerAngles = new Vector3(0, -90, 0);
@@ -88,12 +88,12 @@ public class SpawnManager : MonoBehaviour
             activeVehicles[currentVehicleIndex].transform.eulerAngles = new Vector3(0, 90, 0);
     }
 
-    public void ReplaceActiveVehicle(GameObject newVehicle, GameObject callingVehicle)
+    public void ReplaceActiveVehicle(GameObject newVehicle, GameObject callingVehicle) // ENCAPSULATION
     {
         activeVehicles[GetVehicleIndex(callingVehicle)] = newVehicle;
     }
 
-    private int GetVehicleIndex(GameObject targetVehicle)
+    private int GetVehicleIndex(GameObject targetVehicle) // ABSTRACTION
     {
         for (int i = 0; i < activeVehicles.Count; i++)
         {
